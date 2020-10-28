@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Administrador;
 import javax.swing.JFrame;
 
 /**
@@ -16,9 +17,12 @@ public class VentanaAdministrador extends javax.swing.JFrame
     /**
      * Creates new form VentanaAdministrador
      */
-    public VentanaAdministrador()
+    private Administrador admin;
+    
+    public VentanaAdministrador(Administrador admin)
     {
         initComponents();
+        this.admin = admin;
     }
 
     /**
@@ -186,7 +190,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
     }//GEN-LAST:event_AsignarResponsableActionPerformed
 
     private void JugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugadoresActionPerformed
-        ListaJugadores ljug = new ListaJugadores(this);
+        ListaJugadores ljug = new ListaJugadores(this, admin);
         ljug.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_JugadoresActionPerformed

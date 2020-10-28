@@ -25,6 +25,8 @@ public class Login extends javax.swing.JFrame
         initComponents();
         liga = new LigaAjedrez();
         liga.cargarDatos();
+        usuario = new Usuario(liga);
+        admin = new Administrador(liga);
     }
 
     /**
@@ -178,13 +180,15 @@ public class Login extends javax.swing.JFrame
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        VentanaAdministrador admin = new VentanaAdministrador();
-        admin.setVisible(true);
+        VentanaAdministrador admini = new VentanaAdministrador(admin);
+        admini.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void RegistroJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroJugActionPerformed
-        // TODO add your handling code here:
+        RegistroJugador regJug = new RegistroJugador(this, admin);
+        regJug.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_RegistroJugActionPerformed
 
     /**

@@ -59,9 +59,9 @@ public class VerJugadoresAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VentanaAdministrador adm = new VentanaAdministrador();
+        /*VentanaAdministrador adm = new VentanaAdministrador();
         adm.setVisible(true);
-        this.dispose();
+        this.dispose();*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

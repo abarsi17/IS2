@@ -21,14 +21,19 @@ public class RegistroJugador extends javax.swing.JFrame {
     private int categoria;
     private int edad;
     
+    private final int Infantil = 0;
+    private final int Junior = 1;
+    private final int Senior = 2;
+    
     private Usuario usuario;
     private Administrador admin;
     
     /**
      * Creates new form RegistroJugador
      */
-    public RegistroJugador(JFrame ventana) {
+    public RegistroJugador(JFrame ventana, Administrador admin) {
         initComponents();
+        this.admin = admin;
     }
 
     /**
@@ -166,12 +171,14 @@ public class RegistroJugador extends javax.swing.JFrame {
         nombre = JtextFieldNombre.getText();
         apellidos = jTextFieldApellidos.getText();
         edad = Integer.parseInt(jTextFieldEdad.getText());
+        elo = 0;
         
-        usuario.crearJugador(nombre, apellidos, elo, categoria, edad);
-        
+        admin.crearJugador(nombre, apellidos, elo, categoria, edad);
+  
         Login log = new Login();
         log.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_CrearJugActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
@@ -185,7 +192,12 @@ public class RegistroJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_JtextFieldNombreActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        if(jComboBox1.getSelectedIndex() == Infantil)
+           categoria = 0;
+       else if(jComboBox1.getSelectedIndex() == Junior)
+           categoria = 1;
+       else if(jComboBox1.getSelectedIndex() == Senior)
+           categoria = 2;
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
 

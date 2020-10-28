@@ -5,9 +5,11 @@
  */
 package Vista;
 
+import Controlador.Administrador;
 import Controlador.Usuario;
 import java.util.ArrayList;
 import javax.swing.*;
+import Modelo.LigaAjedrez;
 
 /**
  *
@@ -17,12 +19,14 @@ public class ListaJugadores extends javax.swing.JFrame {
 
     JFrame ventanaActual;
     DefaultListModel modelo;
-    private Usuario usuario;
+    private Administrador admin;
+    LigaAjedrez la;
     /**
      * Creates new form ListaJugadores
      */
-    public ListaJugadores(JFrame ventana) {
+    public ListaJugadores(JFrame ventana, Administrador admin) {
         ventanaActual = ventana;
+        this.admin = admin;
         initComponents();
     }
 
@@ -125,13 +129,14 @@ public class ListaJugadores extends javax.swing.JFrame {
         modelo = new DefaultListModel();
         jList1.setModel(modelo);
         
-         //String jugadores = usuario.ListaJugadores();
-        //ArrayList jugadores = usuario.ListaJugadores();
-        /*
-        for(int i = 0; i < jugadores.length; i++)
+        ArrayList listaJugadores = admin.ListaJugadores();
+        
+        for (Object item: listaJugadores)
         {
             modelo.addElement(item);
-        }*/
+        }
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

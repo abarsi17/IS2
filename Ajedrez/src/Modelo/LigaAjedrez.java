@@ -24,7 +24,7 @@ public class LigaAjedrez {
     public Jugador crearJugador(String _nombre, String _apellidos, int _elo, int _categoria, int _edad)
     {
         Jugador jugador = new Jugador(_nombre, _apellidos, _elo, _categoria, _edad);
-        addJugador(jugador);
+        jugadores.add(jugador);
         
         return jugador;
     }
@@ -82,7 +82,14 @@ public class LigaAjedrez {
         Jugador jugador4 = new Jugador("Kebin", "KOK", 2, 1, 21);
         Jugador jugador5 = new Jugador("Narrote", "Garrote", 28, 3, 24);
         
-        Entrenador entrenador1 = new Entrenador("Enric", "Valor", 34);
-        Entrenador entrenador2 = new Entrenador("Vicent Andres", "Estelles", 32);
+        Entrenador entrenador1 = new Entrenador("Shermi", "Valor", 34);
+        Entrenador entrenador2 = new Entrenador("Vicent", "Estelles", 32);
+        
+        jugadores.add(jugador1);
+        jugadores.add(jugador2);
+        jugadores.add(jugador3);
+        jugadores.add(jugador4);
+        jugadores.add(jugador5);
+        
     }
 }

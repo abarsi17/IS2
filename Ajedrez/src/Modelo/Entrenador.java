@@ -9,7 +9,8 @@ package Modelo;
  *
  * @author ivana
  */
-public class Entrenador {
+public class Entrenador 
+{
     private String nombreEntrenador;
     private String apellidosEntrenador;
     private int edadEntrenador;
@@ -19,6 +20,7 @@ public class Entrenador {
         this.apellidosEntrenador = apellidosEntrenador;
         this.nombreEntrenador = nombreEntrenador;
         this.edadEntrenador = edadEntrenador;
+        //this.club = club;
     }
         
     

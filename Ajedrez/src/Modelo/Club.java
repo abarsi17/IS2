@@ -7,16 +7,9 @@ package Modelo;
 
 /**
  *
- * @author ivana
+ * @author amadeo
  */
 public class Club
 {
-    private String nombre, entrenador, gerente, federacion;
-    
-    public Club()
-    {
-        
-    }
-    
     
 }
