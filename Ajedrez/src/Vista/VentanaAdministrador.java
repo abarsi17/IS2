@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajedrez;
+package Vista;
 
 import javax.swing.JFrame;
 
@@ -78,6 +78,11 @@ public class VentanaAdministrador extends javax.swing.JFrame
         RegistrarNuevoJug.setText("Registrarse como nuevo jugador");
 
         Jugadores.setText("Jugadores");
+        Jugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JugadoresActionPerformed(evt);
+            }
+        });
 
         Entrenadores.setText("Entrenadores");
 
@@ -157,7 +162,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
     }//GEN-LAST:event_VolverActionPerformed
 
     private void TorneosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorneosActionPerformed
-        IscribirseATorneo insTorneo = new IscribirseATorneo(this);
+        InscribirseATorneo insTorneo = new InscribirseATorneo(this);
         insTorneo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorneosActionPerformed
@@ -179,6 +184,12 @@ public class VentanaAdministrador extends javax.swing.JFrame
         respoInf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AsignarResponsableActionPerformed
+
+    private void JugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugadoresActionPerformed
+        ListaJugadores ljug = new ListaJugadores(this);
+        ljug.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_JugadoresActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

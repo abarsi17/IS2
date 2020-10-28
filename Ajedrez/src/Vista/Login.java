@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajedrez;
+package Vista;
+
+import Modelo.*;
+import Controlador.*;
 
 /**
  *
@@ -11,12 +14,17 @@ package ajedrez;
  */
 public class Login extends javax.swing.JFrame
 {
+    LigaAjedrez liga;
+    Administrador admin;
+    Usuario usuario;
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        liga = new LigaAjedrez();
+        liga.cargarDatos();
     }
 
     /**

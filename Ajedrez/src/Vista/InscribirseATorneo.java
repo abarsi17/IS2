@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajedrez;
+package Vista;
 
 import javax.swing.JFrame;
 
@@ -11,14 +11,14 @@ import javax.swing.JFrame;
  *
  * @author ivana
  */
-public class IscribirseATorneo extends javax.swing.JFrame
+public class InscribirseATorneo extends javax.swing.JFrame
 {
     JFrame ventanaActual;
 
     /**
      * Creates new form IscribirseATorneo
      */
-    public IscribirseATorneo(JFrame ventana)
+    public InscribirseATorneo(JFrame ventana)
     {
         ventanaActual = ventana;
         initComponents();

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajedrez;
+package Vista;
 
 import javax.swing.JFrame;
 
@@ -157,7 +157,7 @@ public class VentanaJugador extends javax.swing.JFrame
     }//GEN-LAST:event_AsignarResponsableActionPerformed
 
     private void InscribirseTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscribirseTorneoActionPerformed
-        IscribirseATorneo insTorneo = new IscribirseATorneo(this);
+        InscribirseATorneo insTorneo = new InscribirseATorneo(this);
         insTorneo.setVisible(true);
         this.dispose();  
     }//GEN-LAST:event_InscribirseTorneoActionPerformed
