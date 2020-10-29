@@ -16,6 +16,7 @@ public class LigaAjedrez {
     private ArrayList<Jugador> jugadores;
     private ArrayList<Entrenador> entrenadores;
     private ArrayList<Club> clubs;
+    private ArrayList<Torneo> torneos;
     
     public LigaAjedrez()
     {
@@ -59,7 +60,7 @@ public class LigaAjedrez {
         boolean enc = false;
         Jugador jug = null;
         
-        while(enc == false && i< jugadores.size())
+        while(enc == false && i < jugadores.size())
         {
             if(jugadores.get(i).getNombre().equals(_nombre))
             {
@@ -77,10 +78,17 @@ public class LigaAjedrez {
         return clubs.size();
     }
     
+    public Jugador getJugador(Jugador jugador)
+    {
+        return jugador;
+    }
+    
     public void cargarDatos()
     {
         jugadores = new ArrayList<Jugador>();
         entrenadores = new ArrayList<Entrenador>();
+        torneos = new ArrayList<Torneo>();
+        clubs = new ArrayList<Club> ();
         
         Jugador jugador1 = new Jugador("Amadeo", "Barbera", 12, 2, 22);
         Jugador jugador2 = new Jugador("Gomina", "69", 5, 1, 20);
@@ -91,6 +99,17 @@ public class LigaAjedrez {
         Entrenador entrenador1 = new Entrenador("Shermi", "Valor", 34);
         Entrenador entrenador2 = new Entrenador("Vicent", "Estelles", 32);
         
+        Date dateIni1 = new Date(2020, 11, 23);
+        Date dateFin1 = new Date(2020, 11, 26);
+        Date dateIni2 = new Date(2020, 11, 27);
+        Date dateFin2 = new Date(2020, 11, 30);
+        
+        Torneo torneo1 = new Torneo("Torneo Champ", dateIni1, dateFin1, 10);
+        Torneo torneo2 = new Torneo("Torneo Champ", dateIni2, dateFin2, 10);
+        
+        entrenadores.add(entrenador1);
+        entrenadores.add(entrenador2);
+        
         jugadores.add(jugador1);
         jugadores.add(jugador2);
         jugadores.add(jugador3);
@@ -98,4 +117,6 @@ public class LigaAjedrez {
         jugadores.add(jugador5);
         
     }
+    
+    
 }

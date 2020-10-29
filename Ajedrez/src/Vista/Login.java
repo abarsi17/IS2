@@ -21,12 +21,24 @@ public class Login extends javax.swing.JFrame
     /**
      * Creates new form Login
      */
-    public Login() {
+    public Login(Administrador admin, Usuario usuario)
+    {
         initComponents();
-        liga = new LigaAjedrez();
-        liga.cargarDatos();
-        usuario = new Usuario(liga);
-        admin = new Administrador(liga);
+        this.admin = admin;
+        this.usuario = usuario;
+        
+    }
+    
+    public Login (Administrador admin)
+    {
+        initComponents();
+        this.admin = admin;
+    }
+    
+    public Login (Usuario usuario)
+    {
+        initComponents();
+        this.usuario = usuario;
     }
 
     /**
@@ -49,7 +61,6 @@ public class Login extends javax.swing.JFrame
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        RegistroJug = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,13 +101,6 @@ public class Login extends javax.swing.JFrame
             }
         });
 
-        RegistroJug.setText("Registrarse");
-        RegistroJug.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroJugActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,10 +134,7 @@ public class Login extends javax.swing.JFrame
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(RegistroJug)))
+                        .addComponent(jLabel3)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -157,9 +158,7 @@ public class Login extends javax.swing.JFrame
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addComponent(RegistroJug)
-                .addContainerGap())
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -174,7 +173,7 @@ public class Login extends javax.swing.JFrame
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VentanaJugador jug = new VentanaJugador();
+        VentanaJugador jug = new VentanaJugador(usuario);
         jug.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -185,49 +184,8 @@ public class Login extends javax.swing.JFrame
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void RegistroJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroJugActionPerformed
-        RegistroJugador regJug = new RegistroJugador(this, admin);
-        regJug.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_RegistroJugActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton RegistroJug;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -160,7 +160,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        Login log = new Login();
+        Login log = new Login(admin);
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverActionPerformed

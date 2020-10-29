@@ -16,15 +16,18 @@ public class Torneo
 {  
     private String nombre;
     private Federacion federacion;
-    private Date fecha;
+    private Date fechaIni, fechaFin;
     private int num_participantes;
     private ArrayList<Jugador> jugadores;
     
-    public Torneo(String nombre, Federacion federacion, Date fecha, int num_participantes)
+    public Torneo(String nombre, Date fechaIni, Date fechaFin, int num_participantes)
     {
         this.nombre = nombre;
         this.federacion = federacion;
-        this.fecha = fecha;
+        this.fechaIni = fechaIni;
+        this.fechaFin = fechaFin;
         this.num_participantes = num_participantes;     
     }
 }
+    
+    

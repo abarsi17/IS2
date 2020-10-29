@@ -44,4 +44,9 @@ public class Administrador
         
         return estrucjug;
     }
+    
+    public Jugador getJugador(Object jugador)
+    {
+        return liga.getJugador((Jugador)jugador);
+    }
 }

@@ -31,9 +31,10 @@ public class RegistroJugador extends javax.swing.JFrame {
     /**
      * Creates new form RegistroJugador
      */
-    public RegistroJugador(JFrame ventana, Administrador admin) {
+    public RegistroJugador(JFrame ventana, Administrador admin, Usuario usuario) {
         initComponents();
         this.admin = admin;
+        this.usuario = usuario;
     }
 
     /**
@@ -46,13 +47,11 @@ public class RegistroJugador extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextFieldApellidos = new javax.swing.JTextField();
         JtextFieldNombre = new javax.swing.JTextField();
         jTextFieldContraseña = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
         Volver = new javax.swing.JButton();
         CrearJug = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -62,27 +61,19 @@ public class RegistroJugador extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre");
 
-        jLabel2.setText("Categoria");
-
         jLabel3.setText("Apellidos");
 
         jLabel4.setText("Contraseña");
 
-        jTextFieldApellidos.setText("jTextField1");
-
-        JtextFieldNombre.setText("Nombre");
         JtextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JtextFieldNombreActionPerformed(evt);
             }
         });
 
-        jTextFieldContraseña.setText("jTextField1");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Infantil", "Junior", "Senior" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jTextFieldContraseñaActionPerformed(evt);
             }
         });
 
@@ -102,7 +93,11 @@ public class RegistroJugador extends javax.swing.JFrame {
 
         jLabel5.setText("Edad");
 
-        jTextFieldEdad.setText("jTextField1");
+        jTextFieldEdad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEdadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,7 +111,6 @@ public class RegistroJugador extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addComponent(jLabel1)
                         .addComponent(jLabel4)
-                        .addComponent(jLabel2)
                         .addComponent(jLabel5)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -125,7 +119,6 @@ public class RegistroJugador extends javax.swing.JFrame {
                             .addComponent(jTextFieldContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
                             .addComponent(JtextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
                             .addComponent(jTextFieldApellidos)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextFieldEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))
                         .addContainerGap(100, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -152,11 +145,7 @@ public class RegistroJugador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextFieldEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Volver)
                     .addComponent(CrearJug))
@@ -173,16 +162,23 @@ public class RegistroJugador extends javax.swing.JFrame {
         edad = Integer.parseInt(jTextFieldEdad.getText());
         elo = 0;
         
+       if(edad <= 15)
+           categoria = 0;
+       else if(edad > 15 && edad <=18)
+           categoria = 1;
+       else if(edad > 18)
+           categoria = 2;
+        
         admin.crearJugador(nombre, apellidos, elo, categoria, edad);
   
-        Login log = new Login();
+        Login log = new Login(admin, usuario);
         log.setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_CrearJugActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        Login log = new Login();
+        Login log = new Login(admin, usuario);
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VolverActionPerformed
@@ -191,23 +187,20 @@ public class RegistroJugador extends javax.swing.JFrame {
         
     }//GEN-LAST:event_JtextFieldNombreActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        if(jComboBox1.getSelectedIndex() == Infantil)
-           categoria = 0;
-       else if(jComboBox1.getSelectedIndex() == Junior)
-           categoria = 1;
-       else if(jComboBox1.getSelectedIndex() == Senior)
-           categoria = 2;
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void jTextFieldEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEdadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEdadActionPerformed
+
+    private void jTextFieldContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldContraseñaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CrearJug;
     private javax.swing.JTextField JtextFieldNombre;
     private javax.swing.JButton Volver;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -7,9 +7,10 @@ package Vista;
 
 import Controlador.Administrador;
 import Controlador.Usuario;
+import Modelo.Jugador;
 import java.util.ArrayList;
 import javax.swing.*;
-import Modelo.LigaAjedrez;
+
 
 /**
  *
@@ -20,14 +21,24 @@ public class ListaJugadores extends javax.swing.JFrame {
     JFrame ventanaActual;
     DefaultListModel modelo;
     private Administrador admin;
-    LigaAjedrez la;
     /**
      * Creates new form ListaJugadores
      */
-    public ListaJugadores(JFrame ventana, Administrador admin) {
+    public ListaJugadores(JFrame ventana, Administrador admin)
+    {
+        initComponents();
         ventanaActual = ventana;
         this.admin = admin;
-        initComponents();
+         modelo = new DefaultListModel();
+        jList1.setModel(modelo);
+        
+        ArrayList listaJugadores = admin.ListaJugadores();
+        
+        for (Object item: listaJugadores)
+        {
+            modelo.addElement(item.toString());
+        }
+        
     }
 
     /**
@@ -43,7 +54,6 @@ public class ListaJugadores extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,41 +73,27 @@ public class ListaJugadores extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("BuscarJugadores");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jButton3)
-                .addContainerGap(58, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jButton3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -113,37 +109,20 @@ public class ListaJugadores extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Object jugador = jList1.getSelectedValue();
-        
-        if(jugador != null)
-        {
-            TarjetaJugador tarjug = new TarjetaJugador(this);
-            tarjug.setVisible(true);
-            this.dispose();
-        }
+        ArrayList listaJugadores = admin.ListaJugadores();
+        int num_jugador = jList1.getSelectedIndex();
+
+        TarjetaJugador tarjug = new TarjetaJugador(this, (Jugador)listaJugadores.get(num_jugador), admin);
+        tarjug.setVisible(true);
+        this.dispose();
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        modelo = new DefaultListModel();
-        jList1.setModel(modelo);
-        
-        ArrayList listaJugadores = admin.ListaJugadores();
-        
-        for (Object item: listaJugadores)
-        {
-            modelo.addElement(item.toString());
-        }
-        
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

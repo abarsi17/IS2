@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Usuario;
 import javax.swing.JFrame;
 
 /**
@@ -13,12 +14,15 @@ import javax.swing.JFrame;
  */
 public class VentanaJugador extends javax.swing.JFrame
 {
+    private Usuario usuario;
 
     /**
      * Creates new form VentanaJugador
      */
-    public VentanaJugador() {
+    public VentanaJugador(Usuario usuario)
+    {
         initComponents();
+        this.usuario = usuario;
     }
 
     /**
@@ -133,7 +137,7 @@ public class VentanaJugador extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Login log = new Login();
+        Login log = new Login(usuario);
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
