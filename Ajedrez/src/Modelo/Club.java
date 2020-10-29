@@ -13,13 +13,14 @@ import java.util.ArrayList;
  */
 public class Club
 {
+    private int id;
     private ArrayList<Jugador> jugadores;
     private Entrenador entrenador;
-    //private Gerente;
+    private Gerente gerente;
     
-    public Club()
+    public Club(int id)
     {
-        
+        this.id = id;
     }
     
     public void addJugador (Jugador jugador)
@@ -41,5 +42,6 @@ public class Club
     {
         return entrenador;
     }
+
  
 }

@@ -9,7 +9,8 @@ package Modelo;
  *
  * @author ivana
  */
-public class TarjetaJugador {
+public class TarjetaJugador 
+{
     private Jugador jugador;
     
     public TarjetaJugador(Jugador jugador)

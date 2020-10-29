@@ -9,6 +9,7 @@ package Modelo;
  *
  * @author amadeo
  */
-class Federacion {
+class Federacion
+{
     
 }

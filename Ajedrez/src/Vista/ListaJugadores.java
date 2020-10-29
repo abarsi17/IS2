@@ -133,7 +133,7 @@ public class ListaJugadores extends javax.swing.JFrame {
         
         for (Object item: listaJugadores)
         {
-            modelo.addElement(item);
+            modelo.addElement(item.toString());
         }
         
         

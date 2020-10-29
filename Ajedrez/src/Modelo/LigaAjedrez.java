@@ -15,6 +15,7 @@ public class LigaAjedrez {
     
     private ArrayList<Jugador> jugadores;
     private ArrayList<Entrenador> entrenadores;
+    private ArrayList<Club> clubs;
     
     public LigaAjedrez()
     {
@@ -69,6 +70,11 @@ public class LigaAjedrez {
         }
         
         return jug;
+    }
+    
+    public int cantidadClubs()
+    {
+        return clubs.size();
     }
     
     public void cargarDatos()

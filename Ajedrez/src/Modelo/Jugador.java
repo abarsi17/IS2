@@ -66,5 +66,10 @@ public class Jugador
         this.edad = edad;
     }
     
+    public String toString()
+    {
+        return nombre;
+    }
+    
     
 }
