@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -172,6 +174,22 @@ public class LigaAjedrez {
                 jugadormenor.setResponsable(jugadormayor);
         }
     }
+    
+    public ArrayList ListaTorneos()
+    {
+        return torneos;
+    }
+
+    public void inscribirATorneo(Jugador jugador, Torneo torneo)
+    {
+        for(int i = 0; i < torneos.size(); i++)
+        {
+            if(torneos.get(i).getNombre().equals(torneo.getNombre()))
+            {
+                torneo.addJugador(jugador);
+            }
+        } 
+    }
         
     
     public void cargarDatos()
@@ -189,16 +207,29 @@ public class LigaAjedrez {
         Jugador jugador6 = new Jugador("Fresen", "LOL", 50, 3, 28);
         Jugador jugador7 = new Jugador("Yorrow", "Tronista", 2, 2, 17);
         Jugador jugador8 = new Jugador("Edgar", "Delegat", 100, 3, 30);
-        Jugador jugador9 = new Jugador("Ricardo", "España", 120, 2, 16);
+        Jugador jugador9 = new Jugador("Shermi", "Artes", 120, 2, 16);
         
         Entrenador entrenador1 = new Entrenador("Enric", "Valor", 34);
         Entrenador entrenador2 = new Entrenador("Vicent", "Estelles", 32);
         Entrenador entrenador3 = new Entrenador("ElYoyas", "Kostiliev", 35);
         
-        Date dateIni1 = new Date(2020, 11, 23);
-        Date dateFin1 = new Date(2020, 11, 26);
-        Date dateIni2 = new Date(2020, 11, 27);
-        Date dateFin2 = new Date(2020, 11, 30);
+        Date dateIni2 = new Date(2020-1900, 11-1, 27);
+        Date dateFin2 = new Date(2020-1900, 11-1, 30);
+        Date dateIni1 = null;
+        Date dateFin1 = null;
+        try {
+            SimpleDateFormat sdformat = new SimpleDateFormat("dd-MM-yyyy");
+            dateIni1 = sdformat.parse("23-11-2020");
+            dateFin1 = sdformat.parse("26-11-2020");
+            System.out.println("Date-1: " + 
+                               sdformat.format(dateIni1));
+            System.out.println("Date-2: " + 
+                               sdformat.format(dateFin1));
+            if (dateIni1.equals(dateFin1)) {
+                System.out.println(
+                    "Date-1 is same as Date-2");
+            }
+        } catch (ParseException ex) {}
         
         Torneo torneo1 = new Torneo("Torneo Champ", dateIni1, dateFin1, 6);
         Torneo torneo2 = new Torneo("Torneo Estrella", dateIni2, dateFin2, 10);
@@ -251,8 +282,9 @@ public class LigaAjedrez {
         clubs.add(club1);
         clubs.add(club2);
         clubs.add(club3);
+        
+        torneos.add(torneo1);
+        torneos.add(torneo2);
           
     }
-    
-    
 }

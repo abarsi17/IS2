@@ -90,5 +90,9 @@ public class Administrador
     {
         liga.asignarResponsable(jugadormenor, jugadormayor);
     }
-        
+      
+    public void inscribirATorneo(Jugador jugador, Torneo torneo)
+    {
+        liga.inscribirATorneo(jugador, torneo);
+    }
 }

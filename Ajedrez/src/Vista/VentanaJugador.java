@@ -162,7 +162,7 @@ public class VentanaJugador extends javax.swing.JFrame
     }//GEN-LAST:event_AsignarResponsableActionPerformed
 
     private void InscribirseTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscribirseTorneoActionPerformed
-        InscribirseATorneo insTorneo = new InscribirseATorneo(this, usuario, admin);
+        BuscarTorneo insTorneo = new BuscarTorneo(this, usuario, admin);
         insTorneo.setVisible(true);
         this.dispose();  
     }//GEN-LAST:event_InscribirseTorneoActionPerformed

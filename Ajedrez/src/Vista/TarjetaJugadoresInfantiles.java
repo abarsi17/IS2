@@ -30,7 +30,7 @@ public class TarjetaJugadoresInfantiles extends javax.swing.JFrame {
         
         
         jTextField1.setText(jugador.getNombre());
-        jTextField2.setText(jugador.getApellidos());
+        jTextField2.setText(jugador.getResponsable());
         jTextField3.setText(Integer.toString(jugador.getElo()));
         jTextField4.setText(Integer.toString(jugador.getEdad()));
         jTextField5.setText(Integer.toString(jugador.getCategoria()));

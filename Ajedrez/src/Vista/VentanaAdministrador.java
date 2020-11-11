@@ -183,7 +183,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
     }//GEN-LAST:event_VolverActionPerformed
 
     private void TorneosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorneosActionPerformed
-        InscribirseATorneo insTorneo = new InscribirseATorneo(this, usuario, admin);
+        BuscarTorneo insTorneo = new BuscarTorneo(this, usuario, admin);
         insTorneo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorneosActionPerformed

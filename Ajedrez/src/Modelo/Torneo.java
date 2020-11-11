@@ -33,12 +33,27 @@ public class Torneo
     {
         boolean ok = false;
         
-        if(fechaIni == data1 && fechaFin == data2)
+        if(fechaIni.equals(data1))
         {
             ok = true;
         }
         
         return ok;
+    }
+    
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    public void addJugador (Jugador jugador)
+    {
+        jugadores.add(jugador);
+    }
+
+    public ArrayList getJugadores ()
+    {
+        return jugadores;
     }
 }
     

@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.*;
+import Modelo.Torneo;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultListModel;
@@ -15,7 +16,7 @@ import javax.swing.JFrame;
  *
  * @author ivana
  */
-public class InscribirseATorneo extends javax.swing.JFrame
+public class BuscarTorneo extends javax.swing.JFrame
 {
     JFrame ventanaActual;
     Administrador admin;
@@ -24,7 +25,7 @@ public class InscribirseATorneo extends javax.swing.JFrame
     /**
      * Creates new form IscribirseATorneo
      */
-    public InscribirseATorneo(JFrame ventana, Usuario usuario, Administrador admin)
+    public BuscarTorneo(JFrame ventana, Usuario usuario, Administrador admin)
     {
         initComponents();
         ventanaActual = ventana;
@@ -138,9 +139,16 @@ public class InscribirseATorneo extends javax.swing.JFrame
         jList1.setModel(modelo);
         
         Date data1 = jDateChooser1.getDate();
-        Date data2 = jDateChooser2.getDate(); 
+        Date data2 = jDateChooser2.getDate();
         
-        ArrayList torneosDisponibles = admin.consultarTorneosDisponibles(data1, data2);
+        data1.setHours(0);
+        data1.setMinutes(0);
+        data1.setSeconds(0);
+        data2.setHours(0);
+        data2.setMinutes(0);
+        data2.setSeconds(0);
+        
+        ArrayList<Torneo> torneosDisponibles = admin.consultarTorneosDisponibles(data1, data2);
         
         
         for (Object item : torneosDisponibles) {
