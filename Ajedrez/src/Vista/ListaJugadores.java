@@ -122,7 +122,7 @@ public class ListaJugadores extends javax.swing.JFrame {
         {
             TarjetaJugadoresInfantiles tarjug = new TarjetaJugadoresInfantiles(this, jug, admin);
             tarjug.setVisible(true);
-            this.dispose(); 
+            this.dispose();
         }
         else
         {

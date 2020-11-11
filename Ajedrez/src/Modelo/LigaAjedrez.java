@@ -127,7 +127,26 @@ public class LigaAjedrez {
     
     public void cambiarClub(Jugador jugador, Club club)
     {
-        club.addJugador(jugador);
+        
+        for(int j = 0 ; j < clubs.size(); j++)
+        {
+            for (int z = 0; z < clubs.get(j).getJugadores().size(); z++)
+            {
+                if (clubs.get(j).nombreJugador(jugador).equals(jugador.getNombre())) //no entenc pq.....
+                {
+                      clubs.get(j).eliminarJugador(jugador);
+                }
+            }
+        }
+        
+        for (int i = 0; i < clubs.size(); i++)
+        {
+            if (clubs.get(i).getNombre().equals(club.getNombre()))
+            {
+                clubs.get(i).addJugador(jugador);               
+            }
+        }
+ 
     }
     
     public ArrayList consultarTorneosDisponibles(Date data1, Date data2)
@@ -147,7 +166,11 @@ public class LigaAjedrez {
     
     public void asignarResponsable(Jugador jugadormenor, Jugador jugadormayor)
     {
-        jugadormenor.setResponsable(jugadormayor);
+        for(int i = 0; i < jugadores.size(); i++)
+        {
+            if(jugadormenor.getNombre().equals(jugadores.get(i)))
+                jugadormenor.setResponsable(jugadormayor);
+        }
     }
         
     
@@ -164,7 +187,7 @@ public class LigaAjedrez {
         Jugador jugador4 = new Jugador("Kebin", "KOK", 2, 2, 16);
         Jugador jugador5 = new Jugador("Narrote", "Garrote", 28, 3, 24);
         Jugador jugador6 = new Jugador("Fresen", "LOL", 50, 3, 28);
-        Jugador jugador7 = new Jugador("Yorrow", "tronista", 2, 2, 17);
+        Jugador jugador7 = new Jugador("Yorrow", "Tronista", 2, 2, 17);
         Jugador jugador8 = new Jugador("Edgar", "Delegat", 100, 3, 30);
         Jugador jugador9 = new Jugador("Ricardo", "España", 120, 2, 16);
         
@@ -184,6 +207,8 @@ public class LigaAjedrez {
         entrenadores.add(entrenador2);
         entrenadores.add(entrenador3);
         
+        jugador3.setResponsable(jugador1);
+        
         jugadores.add(jugador1);
         jugadores.add(jugador2);
         jugadores.add(jugador3);
@@ -193,6 +218,7 @@ public class LigaAjedrez {
         jugadores.add(jugador7);
         jugadores.add(jugador8);
         jugadores.add(jugador9);
+        
         
         
         Club club1 = new Club("GuadassuarFC");

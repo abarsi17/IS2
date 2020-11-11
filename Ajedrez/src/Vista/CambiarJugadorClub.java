@@ -152,6 +152,7 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
         int num_club = ComboClubs.getSelectedIndex();
         
         jugador = (Jugador)listaJugadores.get(num_jug);
+        
         club = (Club)listaClubes.get(num_club);
         
         admin.CambiarClub(jugador, club);

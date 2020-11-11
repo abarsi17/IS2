@@ -13,7 +13,7 @@ public class Jugador
 {
     private String nombre;
     private String apellidos;
-    private Jugador responsable;
+    private Jugador responsable = null;
     private int elo;
     private int categoria;
     private int edad;

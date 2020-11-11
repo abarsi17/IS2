@@ -62,4 +62,26 @@ public class Club
     {
         return nombre;
     }
+    
+    public void eliminarJugador (Jugador jug)
+    {
+        for (int i = 0; i < jugadores.size(); i++)
+        {
+            if (jugadores.get(i).getNombre().equals(jug.getNombre()))
+                jugadores.remove(i);
+        }
+    }
+    
+    public String nombreJugador (Jugador jug)
+    {
+        String nombre = "";
+        
+        for (int i= 0; i < jugadores.size(); i++)
+        {
+            if (jug.getNombre().equals(jugadores.get(i).getNombre()))
+                nombre = jugadores.get(i).getNombre();
+        }
+        
+        return nombre;
+    }
 }
