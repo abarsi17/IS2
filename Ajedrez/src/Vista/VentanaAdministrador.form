@@ -46,13 +46,13 @@
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Jugadores" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Entrenadores" alignment="0" pref="132" max="32767" attributes="0"/>
+                          <Component id="Entrenadores" alignment="0" max="32767" attributes="0"/>
                           <Component id="Gerentes" alignment="0" max="32767" attributes="0"/>
                           <Component id="Torneos" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -138,6 +138,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrarse como nuevo jugador"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegistrarNuevoJugActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Jugadores">
       <Properties>
@@ -149,17 +152,23 @@
     </Component>
     <Component class="javax.swing.JButton" name="Entrenadores">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Entrenadores"/>
+        <Property name="text" type="java.lang.String" value="Cambiar jugador de club"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntrenadoresActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Gerentes">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gerentes"/>
+        <Property name="text" type="java.lang.String" value="Clubes"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GerentesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Torneos">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Torneos"/>
+        <Property name="text" type="java.lang.String" value="Inscribirse a torneos"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TorneosActionPerformed"/>

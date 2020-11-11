@@ -29,7 +29,7 @@ public class ListaJugadores extends javax.swing.JFrame {
         initComponents();
         ventanaActual = ventana;
         this.admin = admin;
-         modelo = new DefaultListModel();
+        modelo = new DefaultListModel();
         jList1.setModel(modelo);
         
         ArrayList listaJugadores = admin.ListaJugadores();
@@ -104,19 +104,33 @@ public class ListaJugadores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       ventanaActual.setVisible(true);
+        ventanaActual.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Jugador jug;
         ArrayList listaJugadores = admin.ListaJugadores();
         int num_jugador = jList1.getSelectedIndex();
-
-        TarjetaJugador tarjug = new TarjetaJugador(this, (Jugador)listaJugadores.get(num_jugador), admin);
-        tarjug.setVisible(true);
-        this.dispose();
+        int cat;
         
+        jug = (Jugador)listaJugadores.get(num_jugador);
         
+        cat = jug.getCategoria();
+        
+        if(cat == 1)
+        {
+            TarjetaJugadoresInfantiles tarjug = new TarjetaJugadoresInfantiles(this, jug, admin);
+            tarjug.setVisible(true);
+            this.dispose(); 
+        }
+        else
+        {
+            TarjetaJugador tarjug = new TarjetaJugador(this, jug, admin);
+            tarjug.setVisible(true);
+            this.dispose(); 
+        }
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

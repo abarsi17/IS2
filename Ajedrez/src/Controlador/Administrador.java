@@ -6,7 +6,7 @@
 package Controlador;
 
 import Modelo.*;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  *
@@ -27,9 +27,25 @@ public class Administrador
         return liga.ListaJugadores();
     }
     
+    public ArrayList ListaJugadoresClub()
+    {
+        return liga.ListaJugadoresClub();
+    }
+    
+    public ArrayList ListaClubes()
+    {
+        return liga.ListaClubes();
+    }
+    /*
     public void crearJugador(String _nombre, String _apellido, int _elo, int _categoria, int _edad)
     {
         jugador = liga.crearJugador(_nombre, _apellido, _elo, _categoria, _edad);
+    }*/
+    
+    
+    public Jugador crearJugador(String _nombre, String _apellido, int _elo, int _categoria, int _edad)
+    {
+        return jugador = liga.crearJugador(_nombre, _apellido, _elo, _categoria, _edad);
     }
     
     public EstructuraJugador buscarJugadores(String _nombre)
@@ -44,9 +60,35 @@ public class Administrador
         
         return estrucjug;
     }
-    
+    /* ASO NO SE PA QUE EU GASTEM
     public Jugador getJugador(Object jugador)
     {
         return liga.getJugador((Jugador)jugador);
+    }*/
+    
+    public void CambiarClub(Jugador jugador, Club club)
+    {
+        liga.cambiarClub(jugador, club);
     }
+    
+    public ArrayList consultarTorneosDisponibles(Date data1, Date data2)
+    {
+        return liga.consultarTorneosDisponibles(data1, data2);
+    }
+    
+    public ArrayList ListaJugadoresMayores()
+    {
+        return liga.ListaJugadoresMayores();
+    }
+    
+    public ArrayList ListaJugadoresMenores()
+    {
+        return liga.ListaJugadoresMenores();
+    }
+    
+    public void AsignarResponsable(Jugador jugadormenor, Jugador jugadormayor)
+    {
+        liga.asignarResponsable(jugadormenor, jugadormayor);
+    }
+        
 }

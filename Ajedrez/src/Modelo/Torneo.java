@@ -28,6 +28,18 @@ public class Torneo
         this.fechaFin = fechaFin;
         this.num_participantes = num_participantes;     
     }
+    
+    public boolean comprobarFechas(Date data1, Date data2)
+    {
+        boolean ok = false;
+        
+        if(fechaIni == data1 && fechaFin == data2)
+        {
+            ok = true;
+        }
+        
+        return ok;
+    }
 }
     
     
