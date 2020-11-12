@@ -105,4 +105,9 @@ public class Administrador
     {
         liga.asignarResponsableInicio(jug);
     }
+    
+    public ArrayList ListaSedes()
+    {
+        return liga.ListaSedes();
+    }
 }

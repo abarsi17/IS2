@@ -22,7 +22,7 @@ public class InscribirseTorneo extends javax.swing.JFrame {
     /**
      * Creates new form InscribirseTorneo
      */
-    public InscribirseTorneo(JFrame ventana, Usuario usuario, Administrador admin) {
+    public InscribirseTorneo(JFrame ventana, Usuario usuario, Administrador admin, Torneo torneo) {
         initComponents();
         ventanaActual = ventana;
         this.admin = admin;

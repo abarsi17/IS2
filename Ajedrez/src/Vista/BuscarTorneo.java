@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.*;
+import Modelo.Club;
 import Modelo.Torneo;
 import java.util.ArrayList;
 import java.util.Date;
@@ -76,6 +77,11 @@ public class BuscarTorneo extends javax.swing.JFrame
         });
 
         jButton4.setText("Introducir resultados");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,7 +146,7 @@ public class BuscarTorneo extends javax.swing.JFrame
         
         Date data1 = jDateChooser1.getDate();
         Date data2 = jDateChooser2.getDate();
-        
+
         
         ArrayList<Torneo> torneosDisponibles = admin.consultarTorneosDisponibles(data1, data2);
         
@@ -151,8 +157,21 @@ public class BuscarTorneo extends javax.swing.JFrame
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        ArrayList<Torneo> listaTorneos = admin.ListaTorneos();
+        int num_torneo = jList1.getSelectedIndex();
+
+        InscribirseTorneo insTorn = new InscribirseTorneo(this, usuario, admin, listaTorneos.get(num_torneo));
+        insTorn.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        ArrayList<Torneo> listaTorneos = admin.ListaTorneos();
+        int num_torneo = jList1.getSelectedIndex();
+        IntroducirResultados intRes = new IntroducirResultados(this, usuario, admin, listaTorneos.get(num_torneo));
+        intRes.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -18,7 +18,7 @@ public class Torneo
     private Federacion federacion;
     private Date fechaIni, fechaFin;
     private int num_participantes;
-    private ArrayList<Jugador> jugadores;
+    private ArrayList<Jugador> jugadores = new ArrayList();
     
     public Torneo(String nombre, Date fechaIni, Date fechaFin, int num_participantes)
     {
@@ -26,17 +26,20 @@ public class Torneo
         this.federacion = federacion;
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
-        this.num_participantes = num_participantes;     
+        this.num_participantes = num_participantes;   
+        
     }
     
     public boolean comprobarFechas(Date data1, Date data2)
     {
         boolean ok = false;
         
-        if(fechaIni.getDay() == data1.getDay() && fechaIni.getMonth() == data1.getMonth() && fechaIni.getYear() == data1.getYear())
+        if(fechaIni.getYear() == data1.getYear() && fechaIni.getMonth() == data1.getMonth() && fechaIni.getDay() == data1.getDay())
         {
-            ok = true;
+            if(fechaFin.getYear() == data2.getYear() && fechaFin.getMonth() == data2.getMonth() && fechaFin.getDay() == data2.getDay())
+                ok = true;
         }
+        
         
         return ok;
     }

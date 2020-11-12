@@ -19,6 +19,7 @@ public class LigaAjedrez {
     private ArrayList<Entrenador> entrenadores;
     private ArrayList<Club> clubs;
     private ArrayList<Torneo> torneos;
+    private ArrayList<Sede> sedes;
     
     public LigaAjedrez()
     {
@@ -186,7 +187,7 @@ public class LigaAjedrez {
         {
             if(torneos.get(i).getNombre().equals(torneo.getNombre()))
             {
-                torneo.addJugador(jugador);
+                torneos.get(i).addJugador(jugador);
             }
         } 
     }
@@ -199,6 +200,11 @@ public class LigaAjedrez {
                 jug.setResponsable(jugadores.get(0));
         }
     }
+    
+    public ArrayList ListaSedes()
+    {
+        return sedes;
+    }
         
     
     public void cargarDatos()
@@ -207,6 +213,7 @@ public class LigaAjedrez {
         entrenadores = new ArrayList<Entrenador>();
         torneos = new ArrayList<Torneo>();
         clubs = new ArrayList<Club> ();
+        sedes = new ArrayList<Sede>();
         
         Jugador jugador1 = new Jugador("Amadeo", "Barbera", 12, 3, 22);
         Jugador jugador2 = new Jugador("Gomina", "69", 5, 1, 13);
@@ -222,11 +229,10 @@ public class LigaAjedrez {
         Entrenador entrenador2 = new Entrenador("Vicent", "Estelles", 32);
         Entrenador entrenador3 = new Entrenador("ElYoyas", "Kostiliev", 35);
         
-        Date dateIni2 = new Date(2020-1900, 11-1, 27);
-        Date dateFin2 = new Date(2020-1900, 11-1, 30);
         Date dateIni1 = new Date(2020-1900, 11-1, 23);
         Date dateFin1 = new Date(2020-1900, 11-1, 26);
-
+        Date dateIni2 = new Date(2020-1900, 11-1, 27);
+        Date dateFin2 = new Date(2020-1900, 11-1, 30);
         
         Torneo torneo1 = new Torneo("Torneo Champ", dateIni1, dateFin1, 6);
         Torneo torneo2 = new Torneo("Torneo Estrella", dateIni2, dateFin2, 10);
@@ -281,8 +287,27 @@ public class LigaAjedrez {
         clubs.add(club2);
         clubs.add(club3);
         
+        torneo1.addJugador(jugador1);
+        torneo1.addJugador(jugador2);
+        torneo1.addJugador(jugador3);
+        torneo1.addJugador(jugador4);
+        torneo1.addJugador(jugador5);
+        
+        torneo2.addJugador(jugador6);
+        torneo2.addJugador(jugador7);
+        torneo2.addJugador(jugador8);
+        torneo2.addJugador(jugador9);
+        
         torneos.add(torneo1);
         torneos.add(torneo2);
+        
+        Sede sede1 = new Sede("Guadassuar");
+        Sede sede2 = new Sede("Montortal");
+        Sede sede3 = new Sede("Catadau");
+        
+        sedes.add(sede1);
+        sedes.add(sede2);
+        sedes.add(sede3);
           
     }
 }

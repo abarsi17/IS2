@@ -131,7 +131,7 @@ public class VentanaJugador extends javax.swing.JFrame
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ReservarSedeEntrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarSedeEntrActionPerformed
-        ReservarSedeEntr resSede = new ReservarSedeEntr(this);
+        ReservarSedeEntr resSede = new ReservarSedeEntr(this, usuario, admin);
         resSede.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ReservarSedeEntrActionPerformed

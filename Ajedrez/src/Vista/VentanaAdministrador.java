@@ -40,7 +40,6 @@ public class VentanaAdministrador extends javax.swing.JFrame
         jTextField1 = new javax.swing.JTextField();
         Volver = new javax.swing.JButton();
         ReservarSede = new javax.swing.JButton();
-        IntroducirResultados = new javax.swing.JButton();
         AsignarResponsable = new javax.swing.JButton();
         RegistrarNuevoJug = new javax.swing.JButton();
         Jugadores = new javax.swing.JButton();
@@ -64,13 +63,6 @@ public class VentanaAdministrador extends javax.swing.JFrame
         ReservarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReservarSedeActionPerformed(evt);
-            }
-        });
-
-        IntroducirResultados.setText("Introducir resultados");
-        IntroducirResultados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IntroducirResultadosActionPerformed(evt);
             }
         });
 
@@ -135,8 +127,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(RegistrarNuevoJug, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ReservarSede, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AsignarResponsable, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(IntroducirResultados, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(AsignarResponsable, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Jugadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -157,9 +148,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
                     .addComponent(ReservarSede)
                     .addComponent(Jugadores))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IntroducirResultados)
-                    .addComponent(Entrenadores))
+                .addComponent(Entrenadores)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AsignarResponsable)
@@ -189,16 +178,10 @@ public class VentanaAdministrador extends javax.swing.JFrame
     }//GEN-LAST:event_TorneosActionPerformed
 
     private void ReservarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservarSedeActionPerformed
-        ReservarSedeEntr res = new ReservarSedeEntr(this);
+        ReservarSedeEntr res = new ReservarSedeEntr(this, usuario, admin);
         res.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ReservarSedeActionPerformed
-
-    private void IntroducirResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroducirResultadosActionPerformed
-        BuscarTorneo intRes = new BuscarTorneo(this, usuario, admin);
-        intRes.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_IntroducirResultadosActionPerformed
 
     private void AsignarResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarResponsableActionPerformed
         ResponsableInfantiles respoInf = new ResponsableInfantiles(this, usuario, admin);
@@ -235,7 +218,6 @@ public class VentanaAdministrador extends javax.swing.JFrame
     private javax.swing.JButton AsignarResponsable;
     private javax.swing.JButton Entrenadores;
     private javax.swing.JButton Gerentes;
-    private javax.swing.JButton IntroducirResultados;
     private javax.swing.JButton Jugadores;
     private javax.swing.JButton RegistrarNuevoJug;
     private javax.swing.JButton ReservarSede;

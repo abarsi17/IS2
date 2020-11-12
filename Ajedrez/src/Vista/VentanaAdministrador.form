@@ -41,7 +41,6 @@
                           <Component id="RegistrarNuevoJug" alignment="0" max="32767" attributes="0"/>
                           <Component id="ReservarSede" alignment="0" max="32767" attributes="0"/>
                           <Component id="AsignarResponsable" alignment="0" max="32767" attributes="0"/>
-                          <Component id="IntroducirResultados" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -70,10 +69,7 @@
                   <Component id="Jugadores" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="IntroducirResultados" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Entrenadores" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="Entrenadores" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AsignarResponsable" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -116,14 +112,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReservarSedeActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="IntroducirResultados">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Introducir resultados"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IntroducirResultadosActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="AsignarResponsable">

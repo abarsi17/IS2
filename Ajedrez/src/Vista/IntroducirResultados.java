@@ -20,6 +20,7 @@ public class IntroducirResultados extends javax.swing.JFrame
     Usuario usuario;
     Administrador admin;
     DefaultListModel modelo;
+    Torneo torneo;
     
 
     /**
@@ -30,6 +31,7 @@ public class IntroducirResultados extends javax.swing.JFrame
         this.admin  = admin;
         this.usuario = usuario;
         ventanaActual = ventana;
+        this.torneo = torneo;
         initComponents();
         
         ArrayList<Torneo> listaParticipantes = torneo.getJugadores();
@@ -183,6 +185,7 @@ public class IntroducirResultados extends javax.swing.JFrame
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         /*ArrayList listaParticipantesBox = torneo.getParticipates();
         int num_jugmayor = jComboBox1.getSelectedIndex();*/
+        JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
     }//GEN-LAST:event_jButton6ActionPerformed
 
 
