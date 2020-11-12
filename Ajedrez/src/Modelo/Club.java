@@ -13,14 +13,14 @@ import java.util.ArrayList;
  */
 public class Club
 {
-    private int id;
-    private ArrayList<Jugador> jugadores;
+    private String nombre;
+    private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private Entrenador entrenador;
     private Gerente gerente;
     
-    public Club(int id)
+    public Club(String nombre)
     {
-        this.id = id;
+        this.nombre = nombre;
     }
     
     public void addJugador (Jugador jugador)
@@ -33,15 +33,55 @@ public class Club
         this.entrenador = entrenador;
     }
     
+    public void addGerente(Gerente gerente)
+    {
+        this.gerente = gerente;
+    }
+    
     public ArrayList getJugadores ()
     {
         return jugadores;
     }
     
-    public Entrenador getEntrenadores ()
+    public String getEntrenadores ()
     {
-        return entrenador;
+        return entrenador.getNombreEntrenador();
     }
 
- 
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    public String getGerente()
+    {
+        return gerente.getNombre();
+    }
+    
+    public String toString()
+    {
+        return nombre;
+    }
+    
+    public void eliminarJugador (Jugador jug)
+    {
+        for (int i = 0; i < jugadores.size(); i++)
+        {
+            if (jugadores.get(i).getNombre().equals(jug.getNombre()))
+                jugadores.remove(i);
+        }
+    }
+    
+    public String nombreJugador (Jugador jug)
+    {
+        String nombre = "";
+        
+        for (int i= 0; i < jugadores.size(); i++)
+        {
+            if (jug.getNombre().equals(jugadores.get(i).getNombre()))
+                nombre = jugadores.get(i).getNombre();
+        }
+        
+        return nombre;
+    }
 }

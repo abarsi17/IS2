@@ -35,7 +35,7 @@ public class InscribirseTorneo extends javax.swing.JFrame {
             jComboBox1.addItem(item.toString());
         }
         
-        ArrayList<Torneo> listaTorneos = admin.ListaTorenos();
+        ArrayList<Torneo> listaTorneos = admin.ListaTorneos();
         
         for (Object item: listaTorneos)
         {
@@ -122,7 +122,7 @@ public class InscribirseTorneo extends javax.swing.JFrame {
         Torneo torneo;
         
         ArrayList<Jugador> listaJugadores = admin.ListaJugadores();
-        ArrayList<Torneo> listaTorneos = admin.ListaTorenos();
+        ArrayList<Torneo> listaTorneos = admin.ListaTorneos();
         int num_jug = jComboBox1.getSelectedIndex();
         int num_torneo = jComboBox2.getSelectedIndex();
         

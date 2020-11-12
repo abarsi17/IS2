@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Administrador;
+import Controlador.Usuario;
 import javax.swing.JFrame;
 
 /**
@@ -18,6 +19,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
      * Creates new form VentanaAdministrador
      */
     private Administrador admin;
+    private Usuario usuario;
     
     public VentanaAdministrador(Administrador admin)
     {
@@ -80,6 +82,11 @@ public class VentanaAdministrador extends javax.swing.JFrame
         });
 
         RegistrarNuevoJug.setText("Registrarse como nuevo jugador");
+        RegistrarNuevoJug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarNuevoJugActionPerformed(evt);
+            }
+        });
 
         Jugadores.setText("Jugadores");
         Jugadores.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +95,21 @@ public class VentanaAdministrador extends javax.swing.JFrame
             }
         });
 
-        Entrenadores.setText("Entrenadores");
+        Entrenadores.setText("Cambiar jugador de club");
+        Entrenadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntrenadoresActionPerformed(evt);
+            }
+        });
 
-        Gerentes.setText("Gerentes");
+        Gerentes.setText("Clubes");
+        Gerentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GerentesActionPerformed(evt);
+            }
+        });
 
-        Torneos.setText("Torneos");
+        Torneos.setText("Inscribirse a torneos");
         Torneos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TorneosActionPerformed(evt);
@@ -123,10 +140,10 @@ public class VentanaAdministrador extends javax.swing.JFrame
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Jugadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Entrenadores, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                            .addComponent(Entrenadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Gerentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Torneos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +183,7 @@ public class VentanaAdministrador extends javax.swing.JFrame
     }//GEN-LAST:event_VolverActionPerformed
 
     private void TorneosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorneosActionPerformed
-        InscribirseATorneo insTorneo = new InscribirseATorneo(this);
+        BuscarTorneo insTorneo = new BuscarTorneo(this, usuario, admin);
         insTorneo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorneosActionPerformed
@@ -178,13 +195,13 @@ public class VentanaAdministrador extends javax.swing.JFrame
     }//GEN-LAST:event_ReservarSedeActionPerformed
 
     private void IntroducirResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroducirResultadosActionPerformed
-        IntroducirResultados intRes = new IntroducirResultados(this);
+        BuscarTorneo intRes = new BuscarTorneo(this, usuario, admin);
         intRes.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IntroducirResultadosActionPerformed
 
     private void AsignarResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarResponsableActionPerformed
-        ResponsableInfantiles respoInf = new ResponsableInfantiles(this);
+        ResponsableInfantiles respoInf = new ResponsableInfantiles(this, usuario, admin);
         respoInf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AsignarResponsableActionPerformed
@@ -194,6 +211,24 @@ public class VentanaAdministrador extends javax.swing.JFrame
         ljug.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_JugadoresActionPerformed
+
+    private void RegistrarNuevoJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarNuevoJugActionPerformed
+        RegistroJugador reg = new RegistroJugador(this, admin, usuario);
+        reg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_RegistrarNuevoJugActionPerformed
+
+    private void GerentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerentesActionPerformed
+        ListaClubs club = new ListaClubs(this, admin);
+        club.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GerentesActionPerformed
+
+    private void EntrenadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrenadoresActionPerformed
+        CambiarJugadorClub cambiar = new CambiarJugadorClub(this, admin);
+        cambiar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EntrenadoresActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

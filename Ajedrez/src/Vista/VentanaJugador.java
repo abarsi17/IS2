@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.Usuario;
+import Controlador.*;
 import javax.swing.JFrame;
 
 /**
@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 public class VentanaJugador extends javax.swing.JFrame
 {
     private Usuario usuario;
+    private Administrador admin;
 
     /**
      * Creates new form VentanaJugador
@@ -39,7 +40,6 @@ public class VentanaJugador extends javax.swing.JFrame
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         ReservarSedeEntr = new javax.swing.JButton();
-        IntroRes = new javax.swing.JButton();
         AsignarResponsable = new javax.swing.JButton();
         InscribirseTorneo = new javax.swing.JButton();
 
@@ -61,13 +61,6 @@ public class VentanaJugador extends javax.swing.JFrame
         ReservarSedeEntr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReservarSedeEntrActionPerformed(evt);
-            }
-        });
-
-        IntroRes.setText("Introducir resultados");
-        IntroRes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IntroResActionPerformed(evt);
             }
         });
 
@@ -101,9 +94,6 @@ public class VentanaJugador extends javax.swing.JFrame
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(IntroRes))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(AsignarResponsable))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -123,12 +113,10 @@ public class VentanaJugador extends javax.swing.JFrame
                 .addGap(29, 29, 29)
                 .addComponent(ReservarSedeEntr)
                 .addGap(18, 18, 18)
-                .addComponent(IntroRes)
-                .addGap(18, 18, 18)
                 .addComponent(AsignarResponsable)
                 .addGap(18, 18, 18)
                 .addComponent(InscribirseTorneo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -148,20 +136,14 @@ public class VentanaJugador extends javax.swing.JFrame
         this.dispose();
     }//GEN-LAST:event_ReservarSedeEntrActionPerformed
 
-    private void IntroResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroResActionPerformed
-        IntroducirResultados intoRes = new IntroducirResultados(this);
-        intoRes.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_IntroResActionPerformed
-
     private void AsignarResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarResponsableActionPerformed
-        ResponsableInfantiles respoInf = new ResponsableInfantiles(this);
+        ResponsableInfantiles respoInf = new ResponsableInfantiles(this, usuario, admin);
         respoInf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AsignarResponsableActionPerformed
 
     private void InscribirseTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscribirseTorneoActionPerformed
-        InscribirseATorneo insTorneo = new InscribirseATorneo(this);
+        BuscarTorneo insTorneo = new BuscarTorneo(this, usuario, admin);
         insTorneo.setVisible(true);
         this.dispose();  
     }//GEN-LAST:event_InscribirseTorneoActionPerformed
@@ -170,7 +152,6 @@ public class VentanaJugador extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsignarResponsable;
     private javax.swing.JButton InscribirseTorneo;
-    private javax.swing.JButton IntroRes;
     private javax.swing.JButton ReservarSedeEntr;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

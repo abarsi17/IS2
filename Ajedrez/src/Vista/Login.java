@@ -14,8 +14,10 @@ import Controlador.*;
  */
 public class Login extends javax.swing.JFrame
 {
+    LigaAjedrez liga;
     Administrador admin;
     Usuario usuario;
+
     /**
      * Creates new form Login
      */
@@ -156,11 +158,7 @@ public class Login extends javax.swing.JFrame
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-<<<<<<< Upstream, based on origin/main
                 .addContainerGap(42, Short.MAX_VALUE))
-=======
-                .addContainerGap(54, Short.MAX_VALUE))
->>>>>>> beb7812 
         );
 
         pack();

@@ -141,18 +141,12 @@ public class BuscarTorneo extends javax.swing.JFrame
         Date data1 = jDateChooser1.getDate();
         Date data2 = jDateChooser2.getDate();
         
-        data1.setHours(0);
-        data1.setMinutes(0);
-        data1.setSeconds(0);
-        data2.setHours(0);
-        data2.setMinutes(0);
-        data2.setSeconds(0);
         
         ArrayList<Torneo> torneosDisponibles = admin.consultarTorneosDisponibles(data1, data2);
         
         
         for (Object item : torneosDisponibles) {
-            modelo.addElement(item); //Añade los elementos a modelo de la lista para ser mostrados en esta
+            modelo.addElement(item.toString()); //Añade los elementos a modelo de la lista para ser mostrados en esta
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

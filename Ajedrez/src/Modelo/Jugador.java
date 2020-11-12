@@ -13,6 +13,7 @@ public class Jugador
 {
     private String nombre;
     private String apellidos;
+    private Jugador responsable = null;
     private int elo;
     private int categoria;
     private int edad;
@@ -26,6 +27,11 @@ public class Jugador
         this.edad = edad;
     }
 
+    public void setResponsable(Jugador responsable)
+    {
+        this.responsable = responsable;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -69,6 +75,11 @@ public class Jugador
     public String toString()
     {
         return nombre;
+    }
+    
+    public String getResponsable()
+    {
+        return responsable.getNombre();
     }
     
     

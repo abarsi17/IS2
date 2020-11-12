@@ -28,6 +28,38 @@ public class Torneo
         this.fechaFin = fechaFin;
         this.num_participantes = num_participantes;     
     }
+    
+    public boolean comprobarFechas(Date data1, Date data2)
+    {
+        boolean ok = false;
+        
+        if(fechaIni.getDay() == data1.getDay() && fechaIni.getMonth() == data1.getMonth() && fechaIni.getYear() == data1.getYear())
+        {
+            ok = true;
+        }
+        
+        return ok;
+    }
+    
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    public void addJugador (Jugador jugador)
+    {
+        jugadores.add(jugador);
+    }
+
+    public ArrayList getJugadores ()
+    {
+        return jugadores;
+    }
+    
+    public String toString()
+    {
+        return nombre;
+    }
 }
     
     
