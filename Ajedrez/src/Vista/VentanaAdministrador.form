@@ -41,13 +41,13 @@
                           <Component id="RegistrarNuevoJug" alignment="0" max="32767" attributes="0"/>
                           <Component id="ReservarSede" alignment="0" max="32767" attributes="0"/>
                           <Component id="AsignarResponsable" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Torneos" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Jugadores" alignment="0" max="32767" attributes="0"/>
                           <Component id="Entrenadores" alignment="0" max="32767" attributes="0"/>
                           <Component id="Gerentes" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Torneos" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -69,17 +69,17 @@
                   <Component id="Jugadores" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="Entrenadores" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Entrenadores" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Torneos" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="AsignarResponsable" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Gerentes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="RegistrarNuevoJug" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Torneos" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="RegistrarNuevoJug" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="32" max="32767" attributes="0"/>
               <Component id="Volver" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>

@@ -262,7 +262,7 @@ public class LigaAjedrez {
         
         Gerente gerente1 = new Gerente("Pacoduty", club1);
         Gerente gerente2 = new Gerente("Fuso", club2);
-        Gerente gerente3 = new Gerente("Serdo", club3);
+        Gerente gerente3 = new Gerente("ElSigro", club3);
         
         club1.addGerente(gerente1);
         club2.addGerente(gerente2);
