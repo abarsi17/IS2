@@ -90,7 +90,11 @@
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< Upstream, based on origin/main
               <EmptySpace pref="42" max="32767" attributes="0"/>
+=======
+              <EmptySpace pref="54" max="32767" attributes="0"/>
+>>>>>>> beb7812 
           </Group>
       </Group>
     </DimensionLayout>

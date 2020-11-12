@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.*;
+import Controlador.Usuario;
 import javax.swing.JFrame;
 
 /**
@@ -15,7 +15,6 @@ import javax.swing.JFrame;
 public class VentanaJugador extends javax.swing.JFrame
 {
     private Usuario usuario;
-    private Administrador admin;
 
     /**
      * Creates new form VentanaJugador
@@ -156,13 +155,13 @@ public class VentanaJugador extends javax.swing.JFrame
     }//GEN-LAST:event_IntroResActionPerformed
 
     private void AsignarResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarResponsableActionPerformed
-        ResponsableInfantiles respoInf = new ResponsableInfantiles(this, usuario, admin);
+        ResponsableInfantiles respoInf = new ResponsableInfantiles(this);
         respoInf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AsignarResponsableActionPerformed
 
     private void InscribirseTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscribirseTorneoActionPerformed
-        BuscarTorneo insTorneo = new BuscarTorneo(this, usuario, admin);
+        InscribirseATorneo insTorneo = new InscribirseATorneo(this);
         insTorneo.setVisible(true);
         this.dispose();  
     }//GEN-LAST:event_InscribirseTorneoActionPerformed

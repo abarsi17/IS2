@@ -5,15 +5,12 @@
  */
 package Vista;
 
-import Controlador.Administrador;
-
 /**
  *
  * @author ivana
  */
 public class Federaciones extends javax.swing.JFrame {
 
-    private Administrador admin;
     /**
      * Creates new form Federaciones
      */
@@ -102,7 +99,7 @@ public class Federaciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ListaClubs Valencia = new ListaClubs(this, admin);
+        ListaClubs Valencia = new ListaClubs();
         Valencia.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
