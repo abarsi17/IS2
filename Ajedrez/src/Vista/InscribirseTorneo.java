@@ -22,7 +22,7 @@ public class InscribirseTorneo extends javax.swing.JFrame {
     /**
      * Creates new form InscribirseTorneo
      */
-    public InscribirseTorneo(JFrame ventana, Usuario usuario, Administrador admin, Torneo torneo) {
+    public InscribirseTorneo(JFrame ventana, Usuario usuario, Administrador admin) {
         initComponents();
         ventanaActual = ventana;
         this.admin = admin;
@@ -68,6 +68,11 @@ public class InscribirseTorneo extends javax.swing.JFrame {
         jLabel2.setText("Elige a el torneo a el que lo quieres inscribir");
 
         jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Inscribir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -90,9 +95,9 @@ public class InscribirseTorneo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 123, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -133,6 +138,11 @@ public class InscribirseTorneo extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ventanaActual.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
