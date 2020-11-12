@@ -20,10 +20,11 @@ public class VentanaJugador extends javax.swing.JFrame
     /**
      * Creates new form VentanaJugador
      */
-    public VentanaJugador(Usuario usuario)
+    public VentanaJugador(Usuario usuario, Administrador admin)
     {
         initComponents();
         this.usuario = usuario;
+        this.admin = admin;
     }
 
     /**
@@ -145,7 +146,7 @@ public class VentanaJugador extends javax.swing.JFrame
     private void InscribirseTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscribirseTorneoActionPerformed
         BuscarTorneo insTorneo = new BuscarTorneo(this, usuario, admin);
         insTorneo.setVisible(true);
-        this.dispose();  
+        this.dispose(); 
     }//GEN-LAST:event_InscribirseTorneoActionPerformed
 
 
