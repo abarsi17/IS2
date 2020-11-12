@@ -123,18 +123,13 @@ public class InscribirseTorneo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Jugador jugador;
-        Torneo torneo;
-        
+
         ArrayList<Jugador> listaJugadores = admin.ListaJugadores();
         ArrayList<Torneo> listaTorneos = admin.ListaTorneos();
         int num_jug = jComboBox1.getSelectedIndex();
         int num_torneo = jComboBox2.getSelectedIndex();
         
-        jugador = listaJugadores.get(num_jug);
-        torneo = listaTorneos.get(num_torneo);
-        
-        admin.inscribirATorneo(jugador, torneo);
+        admin.inscribirATorneo(listaJugadores.get(num_jug), listaTorneos.get(num_torneo));
         
         JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
     }//GEN-LAST:event_jButton2ActionPerformed
