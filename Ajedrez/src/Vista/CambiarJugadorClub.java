@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.Administrador;
+import Controlador.Administrador_FACADE;
 import Modelo.Club;
 import Modelo.Jugador;
 import java.util.ArrayList;
@@ -20,11 +20,11 @@ import javax.swing.JOptionPane;
 public class CambiarJugadorClub extends javax.swing.JFrame {
     
     JFrame ventanaActual;
-    Administrador admin;
+    Administrador_FACADE admin;
     /**
      * Creates new form VerJugadoresAdmin
      */
-    public CambiarJugadorClub(JFrame ventana, Administrador admin) {
+    public CambiarJugadorClub(JFrame ventana, Administrador_FACADE admin) {
         ventanaActual = ventana;
         this.admin = admin;
         initComponents();

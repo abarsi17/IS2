@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author ivana
  */
-public class Entrenador 
+public class Entrenador extends Persona_FACTORY
 {
     private String nombreEntrenador;
     private String apellidosEntrenador;

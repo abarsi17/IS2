@@ -17,14 +17,14 @@ import javax.swing.JOptionPane;
  */
 public class ResponsableInfantiles extends javax.swing.JFrame 
 {
-    Usuario usuario;
-    Administrador admin;
+    Usuario_FACADE usuario;
+    Administrador_FACADE admin;
     JFrame ventanaActual;
 
     /**
      * Creates new form ResponsableInfantiles
      */
-    public ResponsableInfantiles(JFrame ventana, Usuario usuario, Administrador admin)
+    public ResponsableInfantiles(JFrame ventana, Usuario_FACADE usuario, Administrador_FACADE admin)
     {
         ventanaActual = ventana;
         this.admin = admin;

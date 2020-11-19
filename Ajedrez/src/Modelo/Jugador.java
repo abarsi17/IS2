@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author ivana
  */
-public class Jugador
+public class Jugador extends Persona_FACTORY
 {
     private String nombre;
     private String apellidos;
@@ -17,6 +17,20 @@ public class Jugador
     private int elo;
     private int categoria;
     private int edad;
+    
+    public Jugador(String nom, String apellidos, int edad)
+    {
+        nombre = nom;
+        this.apellidos = apellidos;
+        this.edad = edad;
+        
+        if(edad <= 15)
+           categoria = 1;
+        else if(edad > 15 && edad <=18)
+           categoria = 2;
+        else if(edad > 18)
+           categoria = 3;
+    }
     
     public Jugador(String nombre, String apellidos, int elo, int categoria, int edad)
     {

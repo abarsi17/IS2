@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.Administrador;
+import Controlador.Administrador_FACADE;
 import Modelo.Jugador;
 import javax.swing.*;
 
@@ -17,11 +17,11 @@ public class TarjetaJugadoresInfantiles extends javax.swing.JFrame {
 
     JFrame ventanaActual;
     Object jugador;
-    Administrador admin;
+    Administrador_FACADE admin;
     /**
      * Creates new form TarjetaJugadoresInfantiles
      */
-    public TarjetaJugadoresInfantiles(JFrame ventana, Jugador jugador, Administrador admin) {
+    public TarjetaJugadoresInfantiles(JFrame ventana, Jugador jugador, Administrador_FACADE admin) {
         
         initComponents();
         ventanaActual = ventana;

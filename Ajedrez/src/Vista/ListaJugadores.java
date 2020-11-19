@@ -5,8 +5,8 @@
  */
 package Vista;
 
-import Controlador.Administrador;
-import Controlador.Usuario;
+import Controlador.Administrador_FACADE;
+import Controlador.Usuario_FACADE;
 import Modelo.Jugador;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -20,11 +20,11 @@ public class ListaJugadores extends javax.swing.JFrame {
 
     JFrame ventanaActual;
     DefaultListModel modelo;
-    private Administrador admin;
+    private Administrador_FACADE admin;
     /**
      * Creates new form ListaJugadores
      */
-    public ListaJugadores(JFrame ventana, Administrador admin)
+    public ListaJugadores(JFrame ventana, Administrador_FACADE admin)
     {
         initComponents();
         ventanaActual = ventana;

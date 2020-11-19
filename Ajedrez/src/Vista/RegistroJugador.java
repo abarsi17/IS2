@@ -6,8 +6,8 @@
 package Vista;
 
 import javax.swing.JFrame;
-import Controlador.Administrador;
-import Controlador.Usuario;
+import Controlador.Administrador_FACADE;
+import Controlador.Usuario_FACADE;
 import Modelo.Club;
 import Modelo.Jugador;
 import java.util.ArrayList;
@@ -28,13 +28,13 @@ public class RegistroJugador extends javax.swing.JFrame {
     private final int Junior = 2;
     private final int Senior = 3;
     
-    private Usuario usuario;
-    private Administrador admin;
+    private Usuario_FACADE usuario;
+    private Administrador_FACADE admin;
     
     /**
      * Creates new form RegistroJugador
      */
-    public RegistroJugador(JFrame ventana, Administrador admin, Usuario usuario) {
+    public RegistroJugador(JFrame ventana, Administrador_FACADE admin, Usuario_FACADE usuario) {
         initComponents();
         this.admin = admin;
         this.usuario = usuario;

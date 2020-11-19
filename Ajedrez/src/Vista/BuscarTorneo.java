@@ -20,14 +20,14 @@ import javax.swing.JFrame;
 public class BuscarTorneo extends javax.swing.JFrame
 {
     JFrame ventanaActual;
-    Administrador admin;
-    Usuario usuario;
+    Administrador_FACADE admin;
+    Usuario_FACADE usuario;
     DefaultListModel modelo;
 
     /**
      * Creates new form IscribirseATorneo
      */
-    public BuscarTorneo(JFrame ventana, Usuario usuario, Administrador admin)
+    public BuscarTorneo(JFrame ventana, Usuario_FACADE usuario, Administrador_FACADE admin)
     {
         initComponents();
         ventanaActual = ventana;

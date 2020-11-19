@@ -5,8 +5,8 @@
  */
 package Vista;
 
-import Controlador.Administrador;
-import Controlador.Usuario;
+import Controlador.Administrador_FACADE;
+import Controlador.Usuario_FACADE;
 import Modelo.LigaAjedrez;
 
 /**
@@ -16,8 +16,8 @@ import Modelo.LigaAjedrez;
 public class LigaDeAjedrez extends javax.swing.JFrame 
 {
     LigaAjedrez liga;
-    Administrador admin;
-    Usuario usuario;
+    Administrador_FACADE admin;
+    Usuario_FACADE usuario;
 
     /**
      * Creates new form LigaDeAjedrez
@@ -26,8 +26,8 @@ public class LigaDeAjedrez extends javax.swing.JFrame
         initComponents();
         liga = new LigaAjedrez();
         liga.cargarDatos();
-        usuario = new Usuario(liga);
-        admin = new Administrador(liga);
+        usuario = new Usuario_FACADE(liga);
+        admin = new Administrador_FACADE(liga);
     }
 
     /**

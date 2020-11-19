@@ -12,12 +12,12 @@ import Modelo.*;
  *
  * @author ivana
  */
-public class Usuario {
+public class Usuario_FACADE {
     
     private Jugador jugador, jugador1;
     private LigaAjedrez liga;
     
-    public Usuario(LigaAjedrez liga)
+    public Usuario_FACADE(LigaAjedrez liga)
     {
         this.liga = liga;
         

@@ -20,6 +20,7 @@ public class LigaAjedrez {
     private ArrayList<Club> clubs;
     private ArrayList<Torneo> torneos;
     private ArrayList<Sede> sedes;
+    private Persona_FACTORY p_fac;
     
     public LigaAjedrez()
     {
@@ -209,12 +210,54 @@ public class LigaAjedrez {
     
     public void cargarDatos()
     {
+        Jugador j1, j2, j3, j4, j5, j6, j7, j8, j9;
+        Entrenador e1, e2, e3;
+        Gerente g1, g2, g3;
+        
         jugadores = new ArrayList<Jugador>();
         entrenadores = new ArrayList<Entrenador>();
         torneos = new ArrayList<Torneo>();
         clubs = new ArrayList<Club> ();
         sedes = new ArrayList<Sede>();
+        p_fac = new Persona_FACTORY();
         
+        
+        
+        j1 = (Jugador) p_fac.Persona_FACTORY(0,"Amadeo", "Barbera", 22);
+        j2 = (Jugador) p_fac.Persona_FACTORY(0,"Gomina", "Baronista", 13);
+        j3 = (Jugador) p_fac.Persona_FACTORY(0,"Osli", "Ramon", 12);
+        j4 = (Jugador) p_fac.Persona_FACTORY(0,"Kebin", "KOK", 16);
+        j5 = (Jugador) p_fac.Persona_FACTORY(0,"Narrote", "Garrote", 24);
+        j6 = (Jugador) p_fac.Persona_FACTORY(0,"Fresen", "LOL", 28);
+        j7 = (Jugador) p_fac.Persona_FACTORY(0,"Yorrow", "Tronista", 17);
+        j8 = (Jugador) p_fac.Persona_FACTORY(0,"Edgar", "Delegat", 30);
+        j9 = (Jugador) p_fac.Persona_FACTORY(0,"TOntio", "Artes", 16);
+        
+        j1.setElo(60);
+        j2.setElo(40);
+        j3.setElo(5);
+        j4.setElo(10);
+        j5.setElo(15);
+        j6.setElo(20);
+        j7.setElo(25);
+        j8.setElo(30);
+        j9.setElo(35);
+        
+        j3.setResponsable(j1);
+        j2.setResponsable(j8);
+        
+        jugadores.add(j1);
+        jugadores.add(j2);
+        jugadores.add(j3);
+        jugadores.add(j4);
+        jugadores.add(j5);
+        jugadores.add(j6);
+        jugadores.add(j7);
+        jugadores.add(j8);
+        jugadores.add(j9);
+        
+        
+/*
         Jugador jugador1 = new Jugador("Amadeo", "Barbera", 12, 3, 22);
         Jugador jugador2 = new Jugador("Gomina", "69", 5, 1, 13);
         Jugador jugador3 = new Jugador("Osli", "Ramon", 30, 1, 12);
@@ -228,6 +271,15 @@ public class LigaAjedrez {
         Entrenador entrenador1 = new Entrenador("Enric", "Valor", 34);
         Entrenador entrenador2 = new Entrenador("Vicent", "Estelles", 32);
         Entrenador entrenador3 = new Entrenador("ElYoyas", "Kostiliev", 35);
+*/
+
+        e1 = (Entrenador) p_fac.Persona_FACTORY(1, "Enric", "Valor", 34);
+        e2 = (Entrenador) p_fac.Persona_FACTORY(1, "Vicent", "Estelles", 32);
+        e3 = (Entrenador) p_fac.Persona_FACTORY(1, "ElYoyas", "Kostiliev", 35);
+        
+        entrenadores.add(e1);
+        entrenadores.add(e2);
+        entrenadores.add(e3);
         
         Date dateIni1 = new Date(2020-1900, 11-1, 23);
         Date dateFin1 = new Date(2020-1900, 11-1, 26);
@@ -236,67 +288,54 @@ public class LigaAjedrez {
         
         Torneo torneo1 = new Torneo("Torneo Champ", dateIni1, dateFin1, 6);
         Torneo torneo2 = new Torneo("Torneo Estrella", dateIni2, dateFin2, 10);
-        
-        entrenadores.add(entrenador1);
-        entrenadores.add(entrenador2);
-        entrenadores.add(entrenador3);
-        
-        jugador3.setResponsable(jugador1);
-        jugador2.setResponsable(jugador8);
-        
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-        jugadores.add(jugador3);
-        jugadores.add(jugador4);
-        jugadores.add(jugador5);
-        jugadores.add(jugador6);
-        jugadores.add(jugador7);
-        jugadores.add(jugador8);
-        jugadores.add(jugador9);
-        
-        
+
         
         Club club1 = new Club("GuadassuarFC");
         Club club2 = new Club("Montortal");
         Club club3 = new Club("CatadauFC");
-        
+ /*       
         Gerente gerente1 = new Gerente("Pacoduty", club1);
         Gerente gerente2 = new Gerente("Fuso", club2);
         Gerente gerente3 = new Gerente("ElSigro", club3);
+*/
+    
+        g1 = (Gerente) p_fac.Persona_FACTORY(2, "Anil", "Murthy", 56);
+        g2 = (Gerente) p_fac.Persona_FACTORY(2, "Fernando", "Roig", 64);
+        g3 = (Gerente) p_fac.Persona_FACTORY(2, "Peter", "Lim", 62);
         
-        club1.addGerente(gerente1);
-        club2.addGerente(gerente2);
-        club3.addGerente(gerente3);
+        club1.addGerente(g1);
+        club2.addGerente(g2);
+        club3.addGerente(g3);
         
-        club1.addJugador(jugador2);
-        club1.addJugador(jugador3);
-        club1.addJugador(jugador9);
-        club1.addEntrenador(entrenador1);
+        club1.addJugador(j2);
+        club1.addJugador(j3);
+        club1.addJugador(j9);
+        club1.addEntrenador(e1);
         
-        club2.addJugador(jugador4);
-        club2.addJugador(jugador5);
-        club2.addJugador(jugador8);
-        club2.addEntrenador(entrenador3);
+        club2.addJugador(j4);
+        club2.addJugador(j5);
+        club2.addJugador(j8);
+        club2.addEntrenador(e3);
         
-        club3.addJugador(jugador1);
-        club3.addJugador(jugador6);
-        club3.addJugador(jugador7);
-        club3.addEntrenador(entrenador2);
+        club3.addJugador(j1);
+        club3.addJugador(j6);
+        club3.addJugador(j7);
+        club3.addEntrenador(e2);
         
         clubs.add(club1);
         clubs.add(club2);
         clubs.add(club3);
         
-        torneo1.addJugador(jugador1);
-        torneo1.addJugador(jugador2);
-        torneo1.addJugador(jugador3);
-        torneo1.addJugador(jugador4);
-        torneo1.addJugador(jugador5);
+        torneo1.addJugador(j1);
+        torneo1.addJugador(j2);
+        torneo1.addJugador(j3);
+        torneo1.addJugador(j4);
+        torneo1.addJugador(j5);
         
-        torneo2.addJugador(jugador6);
-        torneo2.addJugador(jugador7);
-        torneo2.addJugador(jugador8);
-        torneo2.addJugador(jugador9);
+        torneo2.addJugador(j6);
+        torneo2.addJugador(j7);
+        torneo2.addJugador(j8);
+        torneo2.addJugador(j9);
         
         torneos.add(torneo1);
         torneos.add(torneo2);

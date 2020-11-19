@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.Administrador;
+import Controlador.Administrador_FACADE;
 import Modelo.Club;
 import Modelo.Jugador;
 import java.util.ArrayList;
@@ -20,11 +20,11 @@ public class ListaClubs extends javax.swing.JFrame {
 
     JFrame ventanaActual;
     DefaultListModel modelo;
-    private Administrador admin;
+    private Administrador_FACADE admin;
     /**
      * Creates new form ListaClubs
      */
-    public ListaClubs(JFrame ventana, Administrador admin) {
+    public ListaClubs(JFrame ventana, Administrador_FACADE admin) {
         initComponents();
         ventanaActual = ventana;
         this.admin = admin;

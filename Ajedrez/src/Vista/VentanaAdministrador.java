@@ -5,8 +5,8 @@
  */
 package Vista;
 
-import Controlador.Administrador;
-import Controlador.Usuario;
+import Controlador.Administrador_FACADE;
+import Controlador.Usuario_FACADE;
 import javax.swing.JFrame;
 
 /**
@@ -18,10 +18,10 @@ public class VentanaAdministrador extends javax.swing.JFrame
     /**
      * Creates new form VentanaAdministrador
      */
-    private Administrador admin;
-    private Usuario usuario;
+    private Administrador_FACADE admin;
+    private Usuario_FACADE usuario;
     
-    public VentanaAdministrador(Administrador admin)
+    public VentanaAdministrador(Administrador_FACADE admin)
     {
         initComponents();
         this.admin = admin;

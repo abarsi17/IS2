@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.Administrador;
+import Controlador.Administrador_FACADE;
 
 /**
  *
@@ -13,7 +13,7 @@ import Controlador.Administrador;
  */
 public class Federaciones extends javax.swing.JFrame {
 
-    private Administrador admin;
+    private Administrador_FACADE admin;
     /**
      * Creates new form Federaciones
      */

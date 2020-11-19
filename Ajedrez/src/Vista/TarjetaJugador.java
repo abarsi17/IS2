@@ -17,12 +17,12 @@ public class TarjetaJugador extends javax.swing.JFrame {
 
     JFrame ventanaActual;
     Object jugador;
-    Administrador admin;
+    Administrador_FACADE admin;
     
     /**
      * Creates new form TarjetaJugador
      */
-    public TarjetaJugador(JFrame ventana, Jugador jugador, Administrador admin)
+    public TarjetaJugador(JFrame ventana, Jugador jugador, Administrador_FACADE admin)
     {
         initComponents();
         ventanaActual = ventana;

@@ -17,8 +17,8 @@ import javax.swing.*;
 public class IntroducirResultados extends javax.swing.JFrame
 {
     JFrame ventanaActual;
-    Usuario usuario;
-    Administrador admin;
+    Usuario_FACADE usuario;
+    Administrador_FACADE admin;
     DefaultListModel modelo;
     Torneo torneo;
     
@@ -26,7 +26,7 @@ public class IntroducirResultados extends javax.swing.JFrame
     /**
      * Creates new form IntroducirResultados
      */
-    public IntroducirResultados(JFrame ventana, Usuario usuario, Administrador admin, Torneo torneo)
+    public IntroducirResultados(JFrame ventana, Usuario_FACADE usuario, Administrador_FACADE admin, Torneo torneo)
     {
         this.admin  = admin;
         this.usuario = usuario;
@@ -100,10 +100,6 @@ public class IntroducirResultados extends javax.swing.JFrame
         });
 
         jLabel1.setText("Lista de Participantes ");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador1", "Jugador2", "Jugador3" }));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador1", "Jugador2", "Jugador3" }));
 
         jLabel2.setText("Ganador");
 

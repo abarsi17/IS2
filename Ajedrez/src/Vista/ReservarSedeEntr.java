@@ -17,14 +17,14 @@ import javax.swing.JOptionPane;
 public class ReservarSedeEntr extends javax.swing.JFrame
 {
     JFrame ven;
-    Administrador admin;
-    Usuario usuario;
+    Administrador_FACADE admin;
+    Usuario_FACADE usuario;
 
     /**
      * Creates new form ReservarSede
      * @param ventana
      */
-    public ReservarSedeEntr(JFrame ventana, Usuario usuario, Administrador admin)
+    public ReservarSedeEntr(JFrame ventana, Usuario_FACADE usuario, Administrador_FACADE admin)
     {
         ven = ventana;
         initComponents();

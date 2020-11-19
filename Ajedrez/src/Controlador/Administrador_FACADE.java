@@ -12,12 +12,12 @@ import java.util.*;
  *
  * @author ivana
  */
-public class Administrador
+public class Administrador_FACADE
 {
     private LigaAjedrez liga;
     private Jugador jugador, jugador1;
     
-    public Administrador (LigaAjedrez liga)
+    public Administrador_FACADE (LigaAjedrez liga)
     {
         this.liga = liga;
     }

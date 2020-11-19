@@ -14,13 +14,13 @@ import javax.swing.JFrame;
  */
 public class VentanaJugador extends javax.swing.JFrame
 {
-    private Usuario usuario;
-    private Administrador admin;
+    private Usuario_FACADE usuario;
+    private Administrador_FACADE admin;
 
     /**
      * Creates new form VentanaJugador
      */
-    public VentanaJugador(Usuario usuario, Administrador admin)
+    public VentanaJugador(Usuario_FACADE usuario, Administrador_FACADE admin)
     {
         initComponents();
         this.usuario = usuario;
