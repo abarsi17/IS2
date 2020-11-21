@@ -13,6 +13,7 @@ public class Jugador extends Persona_FACTORY
 {
     private String nombre;
     private String apellidos;
+    private int id = -1;
     private Jugador responsable = null;
     private int elo;
     private int categoria;
@@ -23,6 +24,7 @@ public class Jugador extends Persona_FACTORY
         nombre = nom;
         this.apellidos = apellidos;
         this.edad = edad;
+        this.id = id + 1;
         
         if(edad <= 15)
            categoria = 1;
