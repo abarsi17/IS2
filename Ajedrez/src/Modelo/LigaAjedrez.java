@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import DAO.DAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -348,5 +349,6 @@ public class LigaAjedrez {
         sedes.add(sede2);
         sedes.add(sede3);
           
+        DAO dao = new DAO();
     }
 }
