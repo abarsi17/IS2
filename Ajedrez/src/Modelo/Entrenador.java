@@ -14,6 +14,7 @@ public class Entrenador extends Persona_FACTORY
     private String nombreEntrenador;
     private String apellidosEntrenador;
     private int edadEntrenador;
+    private int id_entrenador = -1;
     
     public Entrenador(String nombreEntrenador,String apellidosEntrenador,int edadEntrenador)
     {
@@ -21,6 +22,7 @@ public class Entrenador extends Persona_FACTORY
         this.nombreEntrenador = nombreEntrenador;
         this.edadEntrenador = edadEntrenador;
         //this.club = club;
+        this.id_entrenador = id_entrenador + 1; 
     }
         
     

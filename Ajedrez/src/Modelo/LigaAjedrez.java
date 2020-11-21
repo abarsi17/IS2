@@ -6,6 +6,8 @@
 package Modelo;
 
 import DAO.DAO;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -22,6 +24,7 @@ public class LigaAjedrez {
     private ArrayList<Torneo> torneos;
     private ArrayList<Sede> sedes;
     private Persona_FACTORY p_fac;
+    private DAO dao ;
     
     public LigaAjedrez()
     {
@@ -30,10 +33,15 @@ public class LigaAjedrez {
     
     public Jugador crearJugador(String _nombre, String _apellidos, int _elo, int _categoria, int _edad)
     {
-        Jugador jugador = new Jugador(_nombre, _apellidos, _elo, _categoria, _edad);
-        jugadores.add(jugador);
+        Jugador j1;
         
-        return jugador;
+        j1 = (Jugador) p_fac.Persona_FACTORY(0,_nombre, _apellidos, _edad);
+        j1.setElo(_elo);
+        j1.setCategoria(_categoria);
+        
+        jugadores.add(j1);
+        
+        return j1;
     }
     
     public void addJugador(Jugador jug)
@@ -43,7 +51,8 @@ public class LigaAjedrez {
     
     public Entrenador crearEntrenador(String _nombreEntrenador, String _apellidosentrenador, int _edadEntrenador)
     {
-        Entrenador entrenador = new Entrenador(_nombreEntrenador, _apellidosentrenador, _edadEntrenador);
+        Entrenador entrenador;
+        entrenador = (Entrenador) p_fac.Persona_FACTORY(1, _nombreEntrenador, _apellidosentrenador, _edadEntrenador);
         addEntrenador(entrenador);
         
         return entrenador;
@@ -221,6 +230,7 @@ public class LigaAjedrez {
         clubs = new ArrayList<Club> ();
         sedes = new ArrayList<Sede>();
         p_fac = new Persona_FACTORY();
+        dao = new DAO();
         
         
         
@@ -348,7 +358,10 @@ public class LigaAjedrez {
         sedes.add(sede1);
         sedes.add(sede2);
         sedes.add(sede3);
-          
-        DAO dao = new DAO();
+        
+        dao.realizarConsultaSQL("JUGADOR", "ID_JUGADOR");
+        
     }
+    
+   
 }
